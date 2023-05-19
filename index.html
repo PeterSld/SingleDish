@@ -172,14 +172,11 @@ div#food_picture{
 
 	max-width: 50%;
 }
-@media screen and (max-width: 576px){
-	div#food_picture{
-		max-width: calc(100%/3);
-	}
-    .description{
-        width: 68% ;
-        flex: 0 0 auto;
-    }
+.close_mark{
+	width: 25px;
+	left: 94%;
+	top: 1%;
+	position: relative;
 }
 .discount, .price{
 	text-align: end;
@@ -198,6 +195,15 @@ input[type="number"]::-webkit-inner-spin-button{
 .food_description{
 	width: 53%;
 }
+@media screen and (max-width: 576px){
+	div#food_picture{
+		max-width: calc(100%/3);
+	}
+    .description{
+        width: 68% ;
+        flex: 0 0 auto;
+    }
+}
 @media screen and (min-width: 526px){
 	.food_description{
 		width: 50%;
@@ -212,7 +218,13 @@ input[type="number"]::-webkit-inner-spin-button{
 		</form>
 		<div class="container px-0"> 
 			<div class="row mt-3" style="justify-content: space-around;"> 
-				<h4>Food photo</h4>
+				<div class="d-inline-flex">
+					<h4>Food photo</h4>
+					<button type="button" class="btn btn-danger ms-3 " id="deleteFoodPhoto">
+						<i class="fas fa-trash-alt"></i>
+						delete photo
+					</button>
+				</div>
 				<div class="row mt-3 px-0">
 					<div id="food_picture" class="text-center border col-md-4 col-sm-5 " style="background-image: url(https://th.foodmenu.online/images/food/8192_800.jpg?);" > 
 						<div width="30" height="30" class="d-none">
@@ -333,7 +345,7 @@ input[type="number"]::-webkit-inner-spin-button{
 						<label for="cat_271" class="category_translatable" data-id_cat="271">Extra</label>
 					</div>
 					<div class="collapse show food_options  pl-4" id="id_cat_271">
-						<div class="col ps-3">
+						<div class="col pl-3">
 							<a data-target="271" class="selectAll">Select / Clear ALL</a>
 						</div>
 						<div class="food_options_sortable">
